@@ -30,11 +30,11 @@ public class Main {
 
         Type type3 = new Type();
         type3.setId(3);
-        type3.setName("CPU");
-//
-//        typeService.create(type1);
-//        typeService.create(type2);
-//        typeService.create(type3);
+        type3.setName("CD");
+
+        typeService.create(type1);
+        typeService.create(type2);
+        typeService.create(type3);
 
         Computer computer1 = new Computer();
         computer1.setId(1);
@@ -45,9 +45,9 @@ public class Main {
         computer2.setId(2);
         computer2.setName("Lenovo");
         computer2.setId_type(type3.getId());
-//
-//        computerService.create(computer1);
-//        computerService.create(computer2);
+
+        computerService.create(computer1);
+        computerService.create(computer2);
 
         List<Computer> computers = computerService.get("CPU");
 
@@ -56,20 +56,26 @@ public class Main {
             System.out.println(c);
         }
 
+        System.out.println();
+
         computer1.setName("LG");
         computerService.update(computer1);
 
-        System.out.println("The list of computers which have CPU(component type)");
+        computers = computerService.get("CPU");
+
+        System.out.println("The list of computers which have CPU(component type):");
         for (Computer c : computers) {
             System.out.println(c);
         }
 
-        type2.setName("HDD");
-        typeService.update(type2);
+        type3.setName("HDD");
+        typeService.update(type3);
 
-        List<Type> types = typeService.get("HP");
+        System.out.println();
 
-        System.out.println("The list of component types in HP:");
+        List<Type> types = typeService.get("Lenovo");
+
+        System.out.println("The list of component types in Lenovo:");
         for (Type t : types) {
             System.out.println(t);
         }
