@@ -9,7 +9,7 @@ public class ConnectionFactory {
     private static final String dbHost = "localhost:3306";
     private static final String dbName = "lab2java";
     private static final String dbUser = "root";
-    private static final String dbPassword = "root";
+    private static final String dbPassword = "";
 
     private static String dbUrl = "jdbc:mysql://" + dbHost + "/" + dbName;
 
